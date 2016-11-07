@@ -11,7 +11,7 @@ import Foundation
 
 func basicCalculate(currentValueArr: inout [String]){
     if currentValueArr[4] == "+" {
-        print(Int(currentValueArr[1])!)
+
         let result = Float64(currentValueArr[1])! + Float64(currentValueArr[2])!
         currentValueArr[3] = String(result)
         

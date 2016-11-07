@@ -61,10 +61,6 @@ class ViewController: UIViewController {
         
     }
     
-    //add a function to update display
-    func displayBarUpdate(){
-        displayBar.text = currentValueArr[whichValue]
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -138,30 +134,67 @@ class ViewController: UIViewController {
     }
     
     @IBAction func multiPress() {
-        addOperation(currentValueArr: &currentValueArr, whichValue: &whichValue, pressvalue: multi)
-        displayBarUpdate()
-        
+        if whichValue == 1{
+            addOperation(currentValueArr: &currentValueArr, whichValue: &whichValue, pressvalue: multi)
+            displayBarUpdate()
+        }else if whichValue == 2 {
+            additionalOperationSignPress(pressValue: multi)
+        }
     }
     
     @IBAction func defactPress() {
-        addOperation(currentValueArr: &currentValueArr, whichValue: &whichValue, pressvalue: defac)
-        displayBarUpdate()
+        if whichValue == 1{
+            addOperation(currentValueArr: &currentValueArr, whichValue: &whichValue, pressvalue: defac)
+            displayBarUpdate()
+        }else if whichValue == 2 {
+            additionalOperationSignPress(pressValue: defac)
+        }
     }
     
     @IBAction func minusPress() {
-        addOperation(currentValueArr: &currentValueArr, whichValue: &whichValue, pressvalue: minus)
-        displayBarUpdate()
+        if whichValue == 1{
+            addOperation(currentValueArr: &currentValueArr, whichValue: &whichValue, pressvalue: minus)
+            displayBarUpdate()
+        }else if whichValue == 2 {
+            additionalOperationSignPress(pressValue: minus)
+        }
     }
     
     @IBAction func plusPress() {
-        addOperation(currentValueArr: &currentValueArr, whichValue: &whichValue, pressvalue: plus)
-        displayBarUpdate()
+        if whichValue == 1 {
+            addOperation(currentValueArr: &currentValueArr, whichValue: &whichValue, pressvalue: plus)
+            displayBarUpdate()
+        } else if whichValue == 2 {
+            additionalOperationSignPress(pressValue: plus)
+        }
     }
     
     @IBAction func pointPress() {
     }
     
     @IBAction func signChangePress() {
+    }
+    
+    /////////////////////
+    //helper functions///
+    /////////////////////
+    
+    //add a function to update display
+    func displayBarUpdate(){
+        displayBar.text = currentValueArr[whichValue]
+    }
+    
+    func additionalOperationSignPress(pressValue: String){
+        basicCalculate(currentValueArr: &currentValueArr)
+        whichValue = 3  //temporary set whichValue in order print out result
+        displayBarUpdate()
+        
+        //set up the values
+        currentValueArr[1] = currentValueArr[3]
+        currentValueArr[3] = ""
+        currentValueArr[2] = ""
+        currentValueArr[4] = pressValue
+        whichValue = 4
     }
 }
 
