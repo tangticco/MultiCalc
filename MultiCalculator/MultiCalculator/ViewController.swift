@@ -130,6 +130,12 @@ class ViewController: UIViewController {
         if whichValue == 2 {
             getResult(currentValueArr: &currentValueArr, whichValue: &whichValue)
             displayBarUpdate()
+        }else if whichValue == 3{
+            currentValueArr[1] = currentValueArr[3]
+            currentValueArr[3] = ""
+            getResult(currentValueArr: &currentValueArr, whichValue: &whichValue)
+            displayBarUpdate()
+            
         }
     }
     
