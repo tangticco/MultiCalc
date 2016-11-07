@@ -31,6 +31,7 @@ class ViewController: UIViewController {
     var multi = "×"
     var defac = "÷"
     var equal = "="
+    var priorityDic = ["+":1,"-":1,"×":2, "÷":2  ]
     
     //initialzie a array of strings to store values
     var currentValueArr: [String] = []
@@ -212,6 +213,7 @@ class ViewController: UIViewController {
     }
     
     func additionalOperationSignPress(pressValue: String){
+        
         addOperation(currentValueArr: &currentValueArr, whichValue: &whichValue, pressvalue: pressValue)
         basicCalculate(currentValueArr: &currentValueArr)
         whichValue = 3  //temporary set whichValue in order print out result
