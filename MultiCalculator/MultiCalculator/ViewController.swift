@@ -16,24 +16,33 @@ class ViewController: UIViewController {
     
     
     //initialize some number values
-    var num0 = 0
-    var num1 = 1
-    var num2 = 2
-    var num3 = 3
-    var num4 = 4
-    var num5 = 5
-    var num6 = 7
-    var num8 = 8
-    var num9 = 9
+    var num0 = "0"
+    var num1 = "1"
+    var num2 = "2"
+    var num3 = "3"
+    var num4 = "4"
+    var num5 = "5"
+    var num6 = "6"
+    var num7 = "7"
+    var num8 = "8"
+    var num9 = "9"
+    var plus = "+"
+    var minus = "-"
+    var multi = "×"
+    var defac = "÷"
+    var equal = "="
     
     //initialzie a array of strings to store values
     var currentValueArr: [String] = []
+    var initialValue: String = ""
     var currentValue1: String = ""
-    var currentValue2: String = ""
+    var currentvalue2: String = ""
+    var resultValue: String = ""
+    var operationSign: String = ""
     
     //initialize some value to determine what to do with the numbers
-    var isSecondValue: Bool = false
-    var operationSign: String = ""
+    var whichValue: Int = 0
+    
     
     
 
@@ -43,9 +52,18 @@ class ViewController: UIViewController {
         
         
         //initialize currentList Arr
-        currentValueArr.append(currentValue1)
-        currentValueArr.append(currentValue2)
+        currentValueArr.append(initialValue) //whichValue = 0
+        currentValueArr.append(currentValue1)  //whichValue = 1
+        currentValueArr.append(currentvalue2)  //whichValue = 2
+        currentValueArr.append(resultValue)  //whichValue = 3
+        currentValueArr.append(operationSign)  //whichValue = 4
         self.allClearPress()
+        
+    }
+    
+    //add a function to update display
+    func displayBarUpdate(){
+        displayBar.text = currentValueArr[whichValue]
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,57 +72,89 @@ class ViewController: UIViewController {
     }
 
     @IBAction func num0Press() {
+        
+        
+        addValue(currentValueArr: &currentValueArr, whichValue: &whichValue, pressvalue: num0)
+        displayBarUpdate()
     }
 
     @IBAction func num1Press() {
+        addValue(currentValueArr: &currentValueArr, whichValue: &whichValue, pressvalue: num1)
+        displayBarUpdate()
     }
     
     @IBAction func num2Press() {
+        addValue(currentValueArr: &currentValueArr, whichValue: &whichValue, pressvalue: num2)
+        displayBarUpdate()
     }
     
     @IBAction func num3Press() {
+        addValue(currentValueArr: &currentValueArr, whichValue: &whichValue, pressvalue: num3)
+        displayBarUpdate()
     }
     
     @IBAction func num4Press() {
+        addValue(currentValueArr: &currentValueArr, whichValue: &whichValue, pressvalue: num4)
+        displayBarUpdate()
     }
     
     @IBAction func num5Press() {
+        addValue(currentValueArr: &currentValueArr, whichValue: &whichValue, pressvalue: num5)
+        displayBarUpdate()
     }
     
     @IBAction func num6Press() {
+        addValue(currentValueArr: &currentValueArr, whichValue: &whichValue, pressvalue: num6)
+        displayBarUpdate()
     }
     
     @IBAction func num7Press() {
+        addValue(currentValueArr: &currentValueArr, whichValue: &whichValue, pressvalue: num7)
+        displayBarUpdate()
     }
     
     @IBAction func num8Press() {
+        addValue(currentValueArr: &currentValueArr, whichValue: &whichValue, pressvalue: num8)
+        displayBarUpdate()
     }
     
     @IBAction func num9Press() {
+        addValue(currentValueArr: &currentValueArr, whichValue: &whichValue, pressvalue: num9)
+        displayBarUpdate()
     }
     
     @IBAction func allClearPress() {
         //clean up everything
         displayBar.text = "Enter a number"
-        isSecondValue = false
-        currentValueArr[0] = ""
-        currentValueArr[1] = ""
-        operationSign = ""
+        for i in 0...4{
+            currentValueArr[i] = ""
+        }
+        whichValue = 0
     }
     
     @IBAction func equalPress() {
+        
     }
     
     @IBAction func multiPress() {
+        addOperation(currentValueArr: &currentValueArr, whichValue: &whichValue, pressvalue: minus)
+        displayBarUpdate()
+        
     }
     
     @IBAction func defactPress() {
+        addOperation(currentValueArr: &currentValueArr, whichValue: &whichValue, pressvalue: defac)
+        displayBarUpdate()
     }
     
     @IBAction func minusPress() {
+        addOperation(currentValueArr: &currentValueArr, whichValue: &whichValue, pressvalue: minus)
+        displayBarUpdate()
     }
     
     @IBAction func plusPress() {
+        addOperation(currentValueArr: &currentValueArr, whichValue: &whichValue, pressvalue: plus)
+        displayBarUpdate()
     }
     
     @IBAction func pointPress() {
