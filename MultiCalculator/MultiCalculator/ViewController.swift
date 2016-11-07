@@ -130,16 +130,22 @@ class ViewController: UIViewController {
         if whichValue == 2 {
             getResult(currentValueArr: &currentValueArr, whichValue: &whichValue)
             displayBarUpdate()
-        }else if whichValue == 3{
             currentValueArr[1] = currentValueArr[3]
-            currentValueArr[3] = ""
+            whichValue = 1
+        }else if whichValue == 1 && currentValueArr[3] != ""{
             getResult(currentValueArr: &currentValueArr, whichValue: &whichValue)
             displayBarUpdate()
-            
+            currentValueArr[1] = currentValueArr[3]
+            whichValue = 1
         }
     }
     
     @IBAction func multiPress() {
+        
+        if currentValueArr[3] != "" {
+            currentValueArr[2] = ""
+        }
+        
         if whichValue == 1{
             addOperation(currentValueArr: &currentValueArr, whichValue: &whichValue, pressvalue: multi)
             displayBarUpdate()
@@ -149,6 +155,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func defactPress() {
+        
+        if currentValueArr[3] != "" {
+            currentValueArr[2] = ""
+        }
+        
         if whichValue == 1{
             addOperation(currentValueArr: &currentValueArr, whichValue: &whichValue, pressvalue: defac)
             displayBarUpdate()
@@ -158,6 +169,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func minusPress() {
+        
+        if currentValueArr[3] != "" {
+            currentValueArr[2] = ""
+        }
+        
         if whichValue == 1{
             addOperation(currentValueArr: &currentValueArr, whichValue: &whichValue, pressvalue: minus)
             displayBarUpdate()
@@ -167,6 +183,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func plusPress() {
+        
+        if currentValueArr[3] != "" {
+            currentValueArr[2] = ""
+        }
+        
         if whichValue == 1 {
             addOperation(currentValueArr: &currentValueArr, whichValue: &whichValue, pressvalue: plus)
             displayBarUpdate()
@@ -191,6 +212,7 @@ class ViewController: UIViewController {
     }
     
     func additionalOperationSignPress(pressValue: String){
+        addOperation(currentValueArr: &currentValueArr, whichValue: &whichValue, pressvalue: pressValue)
         basicCalculate(currentValueArr: &currentValueArr)
         whichValue = 3  //temporary set whichValue in order print out result
         displayBarUpdate()
