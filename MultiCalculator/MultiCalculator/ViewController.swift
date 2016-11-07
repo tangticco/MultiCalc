@@ -72,8 +72,6 @@ class ViewController: UIViewController {
     }
 
     @IBAction func num0Press() {
-        
-        
         addValue(currentValueArr: &currentValueArr, whichValue: &whichValue, pressvalue: num0)
         displayBarUpdate()
     }
@@ -133,11 +131,14 @@ class ViewController: UIViewController {
     }
     
     @IBAction func equalPress() {
-        
+        if whichValue == 2 {
+            getResult(currentValueArr: &currentValueArr, whichValue: &whichValue)
+            displayBarUpdate()
+        }
     }
     
     @IBAction func multiPress() {
-        addOperation(currentValueArr: &currentValueArr, whichValue: &whichValue, pressvalue: minus)
+        addOperation(currentValueArr: &currentValueArr, whichValue: &whichValue, pressvalue: multi)
         displayBarUpdate()
         
     }

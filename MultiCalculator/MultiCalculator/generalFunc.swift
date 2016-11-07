@@ -12,14 +12,21 @@ func addValue(currentValueArr: inout [String], whichValue: inout Int, pressvalue
     if whichValue == 0{
         whichValue = 1
     }else if whichValue == 4 {
-        whichValue = 3
+        whichValue = 2
     }
-    currentValueArr[whichValue].append(pressvalue)
+    currentValueArr[whichValue] = currentValueArr[whichValue] + pressvalue
 }
 
 func addOperation(currentValueArr: inout [String], whichValue: inout Int, pressvalue: String){
     whichValue = 4
-    currentValueArr[whichValue].append(pressvalue)
+    currentValueArr[whichValue] = pressvalue
+}
+
+
+func getResult(currentValueArr: inout [String], whichValue: inout Int){
+    whichValue = 3
+    basicCalculate(currentValueArr: &currentValueArr)
+    
 }
 
 

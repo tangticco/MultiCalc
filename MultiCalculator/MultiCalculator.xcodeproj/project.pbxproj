@@ -13,6 +13,7 @@
 		BD616A401DCFEECF0053D64D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD616A3F1DCFEECF0053D64D /* Assets.xcassets */; };
 		BD616A431DCFEECF0053D64D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD616A411DCFEECF0053D64D /* LaunchScreen.storyboard */; };
 		BD616A4B1DCFFF940053D64D /* generalFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD616A4A1DCFFF940053D64D /* generalFunc.swift */; };
+		BD616A4D1DD00FA50053D64D /* arithimeticFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD616A4C1DD00FA50053D64D /* arithimeticFunc.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		BD616A421DCFEECF0053D64D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD616A441DCFEECF0053D64D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD616A4A1DCFFF940053D64D /* generalFunc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = generalFunc.swift; sourceTree = "<group>"; };
+		BD616A4C1DD00FA50053D64D /* arithimeticFunc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = arithimeticFunc.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				BD616A411DCFEECF0053D64D /* LaunchScreen.storyboard */,
 				BD616A441DCFEECF0053D64D /* Info.plist */,
 				BD616A4A1DCFFF940053D64D /* generalFunc.swift */,
+				BD616A4C1DD00FA50053D64D /* arithimeticFunc.swift */,
 			);
 			path = MultiCalculator;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 				BD616A4B1DCFFF940053D64D /* generalFunc.swift in Sources */,
 				BD616A3B1DCFEECF0053D64D /* ViewController.swift in Sources */,
 				BD616A391DCFEECF0053D64D /* AppDelegate.swift in Sources */,
+				BD616A4D1DD00FA50053D64D /* arithimeticFunc.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
